@@ -4,19 +4,22 @@ title: Akawaka Documentation Hub
 projects:
   - name: Opencode
     description: "Developer tools and documentation automation."
-    url: "https://github.com/akawaka/opencode/"
+    path: "/opencode"
+    repository: "akawaka/opencode"
   # Add more projects here!
 ---
 
 <h1>Akawaka Documentation Hub</h1>
 
-Welcome! Explore our projects:
+Welcome! Explore our projects documentations:
 
 <div class="cards">
   {% for project in page.projects %}
-    <a class="card" href="{{ project.url }}">
+  <div class="card">
       <h2>{{ project.name }}</h2>
       <p>{{ project.description }}</p>
-    </a>
+      <a href="{{ project.path }}">Documentation</a>
+      <a href="https://github.com/{{ project.repository }}" target="_blank">Repository</a>
+  </div>
   {% endfor %}
 </div>
