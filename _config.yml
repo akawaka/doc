@@ -10,13 +10,6 @@ nav_links:
   - title: Opencode
     url: /opencode/
 
-collections:
-  opencode:
-    output: true
-    permalink: /opencode/:path/
-#  anotherproject:
-#    output: true
-#    permalink: /anotherproject/:path/
     
 # Build settings
 markdown: kramdown
@@ -67,11 +60,6 @@ nav_links:  # Used by your layouts/includes for navigation
     url: /
   - title: Opencode
     url: /opencode/
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-theme: minima
 
 # Plugins
 plugins:
