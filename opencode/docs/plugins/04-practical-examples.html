@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Practical Examples | Akawaka OpenCode</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Practical Examples" />
+<meta name="author" content="Akawaka Team" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ready-to-use, opinionated OpenCode configuration built for Akawaka workflows. Less setup, more shipping." />
+<meta property="og:description" content="Ready-to-use, opinionated OpenCode configuration built for Akawaka workflows. Less setup, more shipping." />
+<link rel="canonical" href="https://akawaka.github.io/opencode/docs/plugins/04-practical-examples.html" />
+<meta property="og:url" content="https://akawaka.github.io/opencode/docs/plugins/04-practical-examples.html" />
+<meta property="og:site_name" content="Akawaka OpenCode" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Practical Examples" />
+<meta name="twitter:site" content="@akawaka" />
+<meta name="twitter:creator" content="@Akawaka Team" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Akawaka Team"},"description":"Ready-to-use, opinionated OpenCode configuration built for Akawaka workflows. Less setup, more shipping.","headline":"Practical Examples","url":"https://akawaka.github.io/opencode/docs/plugins/04-practical-examples.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/opencode/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link type="application/atom+xml" rel="alternate" href="https://akawaka.github.io/opencode/feed.xml" title="Akawaka OpenCode" /></head>
+
+<body class="site"><header class="site-header">
+    <div class="wrapper">
+        <div class="header-content">
+            <a class="site-title" href="/opencode/">
+                <span class="logo">🚀</span>
+                Akawaka OpenCode
+            </a>
+
+            <nav class="site-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links"><a href="/opencode/" 
+                           class="nav-link">
+                            Home
+                        </a><a href="/opencode/docs/" 
+                           class="nav-link current">
+                            Documentation
+                        </a><a href="/opencode/docs/spec-drive-agentic-dev/" 
+                           class="nav-link">
+                            Workflow
+                        </a><a href="/opencode/docs/project-configuration/" 
+                           class="nav-link">
+                            Getting Started
+                        </a><a href="https://github.com/akawaka/opencode" class="nav-link github-link" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header><main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Practical Examples</h1></header>
+
+    <div class="post-content">
+        <table>
+  <tbody>
+    <tr>
+      <td><a href="./03-hooks-and-lifecycle.md">⬅️ Previous: Plugin Lifecycle &amp; Hooks</a></td>
+      <td><a href="./README.md">🔝 Summary</a></td>
+      <td><a href="./05-advanced-topics.md">➡️ Next: Advanced Topics</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="4-practical-examples">4. Practical Examples</h1>
+
+<p>This section provides a collection of real-world plugin examples you can adapt for your own projects.</p>
+
+<hr />
+
+<h3 id="example-1-enforcing-a-project-sandbox">Example 1: Enforcing a Project Sandbox</h3>
+
+<p><strong>Goal:</strong> Prevent the agent from accessing or modifying files outside a specific project directory.</p>
+
+<p>This plugin uses the <code class="language-plaintext highlighter-rouge">permission.ask</code> hook to intercept shell commands and file system tool calls, checking if the target path is within a predefined <code class="language-plaintext highlighter-rouge">PROJECT_ROOT</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Plugin</span><span class="p">,</span> <span class="nx">Hooks</span><span class="p">,</span> <span class="nx">PluginInput</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@opencode-ai/plugin</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">path</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">sandboxPlugin</span><span class="p">:</span> <span class="nx">Plugin</span> <span class="o">=</span> <span class="k">async </span><span class="p">({</span> <span class="nx">app</span> <span class="p">}):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Hooks</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">PROJECT_ROOT</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/Users/your-username/my-project</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">isPathInSandbox</span> <span class="o">=</span> <span class="p">(</span><span class="na">targetPath</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">boolean</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">resolvedPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">targetPath</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">resolvedPath</span><span class="p">.</span><span class="nf">startsWith</span><span class="p">(</span><span class="nx">PROJECT_ROOT</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`Sandbox Plugin Initialized. Root: </span><span class="p">${</span><span class="nx">PROJECT_ROOT</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="k">async</span> <span class="dl">"</span><span class="s2">permission.ask</span><span class="dl">"</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="na">targetPath</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+
+      <span class="k">if </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="kd">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">shell</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">targetPath</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">command</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">).</span><span class="nf">pop</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="kd">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">tool</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">targetPath</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">if </span><span class="p">(</span><span class="nx">targetPath</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nf">isPathInSandbox</span><span class="p">(</span><span class="nx">targetPath</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">output</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">deny</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="s2">`SANDBOX: Denied access to path outside of project root: </span><span class="p">${</span><span class="nx">targetPath</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">sandboxPlugin</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="example-2-redacting-sensitive-information">Example 2: Redacting Sensitive Information</h3>
+
+<p><strong>Goal:</strong> Automatically redact sensitive information (like API keys) from tool outputs before they are sent to the LLM.</p>
+
+<p>This plugin uses the <code class="language-plaintext highlighter-rouge">tool.execute.after</code> hook to scan tool output and replace sensitive patterns with <code class="language-plaintext highlighter-rouge">[REDACTED]</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Plugin</span><span class="p">,</span> <span class="nx">Hooks</span><span class="p">,</span> <span class="nx">PluginInput</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@opencode-ai/plugin</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">redactionPlugin</span><span class="p">:</span> <span class="nx">Plugin</span> <span class="o">=</span> <span class="k">async </span><span class="p">({</span> <span class="nx">app</span> <span class="p">}):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Hooks</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">SENSITIVE_PATTERN</span> <span class="o">=</span> <span class="sr">/</span><span class="se">([</span><span class="sr">a-zA-Z0-9</span><span class="se">]{32,})</span><span class="sr">/g</span><span class="p">;</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">Redaction Plugin Initialized.</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="k">async</span> <span class="dl">"</span><span class="s2">tool.execute.after</span><span class="dl">"</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if </span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">output</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">output</span><span class="p">.</span><span class="nx">output</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">originalLength</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="nx">output</span><span class="p">.</span><span class="nx">output</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">SENSITIVE_PATTERN</span><span class="p">,</span> <span class="dl">'</span><span class="s1">[REDACTED]</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="nx">originalLength</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`REDACTION: Censored sensitive data from tool "</span><span class="p">${</span><span class="nx">input</span><span class="p">.</span><span class="nx">tool</span><span class="p">}</span><span class="s2">".`</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">redactionPlugin</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="example-3-logging-agent-activity-to-an-external-service">Example 3: Logging Agent Activity to an External Service</h3>
+
+<p><strong>Goal:</strong> Send a log of every tool call to an external API endpoint.</p>
+
+<p>This plugin uses the <code class="language-plaintext highlighter-rouge">tool.execute.after</code> hook and the <code class="language-plaintext highlighter-rouge">fetch</code> API to send a <code class="language-plaintext highlighter-rouge">POST</code> request with tool call details. It also uses the <code class="language-plaintext highlighter-rouge">$</code> shell utility to get the current git commit hash.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Plugin</span><span class="p">,</span> <span class="nx">Hooks</span><span class="p">,</span> <span class="nx">PluginInput</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@opencode-ai/plugin</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">loggingPlugin</span><span class="p">:</span> <span class="nx">Plugin</span> <span class="o">=</span> <span class="k">async </span><span class="p">({</span> <span class="nx">app</span><span class="p">,</span> <span class="nx">$</span> <span class="p">}):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Hooks</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">LOGGING_ENDPOINT</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.example.com/logs</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="na">commitHash</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">commitHash</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">$</span><span class="s2">`git rev-parse HEAD`</span><span class="p">.</span><span class="nf">text</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="nx">commitHash</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">unknown</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`External Logging Plugin Initialized. Commit: </span><span class="p">${</span><span class="nx">commitHash</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="k">async</span> <span class="dl">"</span><span class="s2">tool.execute.after</span><span class="dl">"</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">logPayload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">().</span><span class="nf">toISOString</span><span class="p">(),</span>
+        <span class="na">tool</span><span class="p">:</span> <span class="nx">input</span><span class="p">.</span><span class="nx">tool</span><span class="p">,</span>
+        <span class="na">args</span><span class="p">:</span> <span class="nx">input</span><span class="p">.</span><span class="nx">args</span><span class="p">,</span>
+        <span class="na">sessionID</span><span class="p">:</span> <span class="nx">input</span><span class="p">.</span><span class="nx">sessionID</span><span class="p">,</span>
+        <span class="na">commit</span><span class="p">:</span> <span class="nx">commitHash</span><span class="p">,</span>
+        <span class="na">status</span><span class="p">:</span> <span class="nx">output</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">failed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">};</span>
+
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">LOGGING_ENDPOINT</span><span class="p">,</span> <span class="p">{</span>
+          <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span> <span class="p">},</span>
+          <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">logPayload</span><span class="p">),</span>
+        <span class="p">});</span>
+        <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`Successfully logged tool call for "</span><span class="p">${</span><span class="nx">input</span><span class="p">.</span><span class="nx">tool</span><span class="p">}</span><span class="s2">" to external service.`</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">app</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed to send log to external service:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">loggingPlugin</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Continue to <a href="./05-advanced-topics.md">5. Advanced Topics</a> for more in-depth plugin techniques.</p>
+
+<hr />
+<p><a href="./03-hooks-and-lifecycle.md">⬅️ Previous: Plugin Lifecycle &amp; Hooks</a> | <a href="./README.md">🔝 Summary</a> | <a href="./05-advanced-topics.md">➡️ Next: Advanced Topics</a></p>
+
+    </div>
+</article>
+        </div>
+    </main><footer class="site-footer">
+    <div class="wrapper">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Akawaka OpenCode</h3>
+                <p>Ready-to-use, opinionated OpenCode configuration built for Akawaka workflows. Less setup, more shipping.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul><li><a href="/opencode/">Home</a></li><li><a href="/opencode/docs/">Documentation</a></li><li><a href="/opencode/docs/spec-drive-agentic-dev/">Workflow</a></li><li><a href="/opencode/docs/project-configuration/">Getting Started</a></li></ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/opencode/docs/spec-drive-agentic-dev/">Methodology</a></li>
+                    <li><a href="/opencode/docs/glossary/">Glossary</a></li>
+                    <li><a href="/opencode/docs/tips/">Tips & Tricks</a></li>
+                    <li><a href="https://github.com/akawaka/opencode" target="_blank" rel="noopener">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Akawaka Team. Made with ❤️ by the Akawaka Team.</p>
+        </div>
+    </div>
+</footer><script>
+        // Simple smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.site-nav');
+        
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spec-Driven Agentic Development | Akawaka OpenCode</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Spec-Driven Agentic Development" />
+<meta name="author" content="Akawaka Team" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A structured methodology for building software features through specifications, optimized for AI-powered development tools." />
+<meta property="og:description" content="A structured methodology for building software features through specifications, optimized for AI-powered development tools." />
+<link rel="canonical" href="https://akawaka.github.io/opencode/docs/spec-drive-agentic-dev.html" />
+<meta property="og:url" content="https://akawaka.github.io/opencode/docs/spec-drive-agentic-dev.html" />
+<meta property="og:site_name" content="Akawaka OpenCode" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spec-Driven Agentic Development" />
+<meta name="twitter:site" content="@akawaka" />
+<meta name="twitter:creator" content="@Akawaka Team" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Akawaka Team"},"description":"A structured methodology for building software features through specifications, optimized for AI-powered development tools.","headline":"Spec-Driven Agentic Development","url":"https://akawaka.github.io/opencode/docs/spec-drive-agentic-dev.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/opencode/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link type="application/atom+xml" rel="alternate" href="https://akawaka.github.io/opencode/feed.xml" title="Akawaka OpenCode" /></head>
+
+<body class="site"><header class="site-header">
+    <div class="wrapper">
+        <div class="header-content">
+            <a class="site-title" href="/opencode/">
+                <span class="logo">🚀</span>
+                Akawaka OpenCode
+            </a>
+
+            <nav class="site-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links"><a href="/opencode/" 
+                           class="nav-link">
+                            Home
+                        </a><a href="/opencode/docs/" 
+                           class="nav-link current">
+                            Documentation
+                        </a><a href="/opencode/docs/spec-drive-agentic-dev/" 
+                           class="nav-link">
+                            Workflow
+                        </a><a href="/opencode/docs/project-configuration/" 
+                           class="nav-link">
+                            Getting Started
+                        </a><a href="https://github.com/akawaka/opencode" class="nav-link github-link" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header><main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Spec-Driven Agentic Development</h1><p class="post-description">A structured methodology for building software features through specifications, optimized for AI-powered development tools.</p></header>
+
+    <div class="post-content">
+        <h1 id="-spec-driven-agentic-development">🧩 Spec-Driven Agentic Development</h1>
+
+<p>A structured methodology for building software features through specifications, optimized for AI-powered development tools.</p>
+
+<hr />
+
+<h2 id="-the-5-phase-workflow">🏁 The 5-Phase Workflow</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. @spec [description]         → Feature List         → [Approval Gate]
+2. @spec:requirements [feature] → requirements.md      → [Approval Gate]
+3. @spec:design                 → design.md            → [Approval Gate]
+4. @spec:tasks                  → tasks.md             → [Approval Gate]
+5. @spec:execute [feature]      → Working Code         → [Testing &amp; Deploy]
+</code></pre></div></div>
+
+<h3 id="1️⃣-planning-mode-spec-specplan">1️⃣ Planning Mode (<code class="language-plaintext highlighter-rouge">@spec</code>, <code class="language-plaintext highlighter-rouge">@spec:plan</code>)</h3>
+<p>Break down a project goal into manageable features.</p>
+<ul>
+  <li><strong>Input:</strong> Project description</li>
+  <li><strong>Output:</strong> Feature directories with basic requirements</li>
+  <li><strong>Gate:</strong> “Ready to detail requirements for the first feature?”</li>
+</ul>
+
+<h3 id="2️⃣-requirements-mode-specrequirements">2️⃣ Requirements Mode (<code class="language-plaintext highlighter-rouge">@spec:requirements</code>)</h3>
+<p>Define WHAT needs to be built using EARS format.</p>
+<ul>
+  <li><strong>Input:</strong> Feature name</li>
+  <li><strong>Output:</strong> Detailed <code class="language-plaintext highlighter-rouge">requirements.md</code> with testable specifications</li>
+  <li><strong>Gate:</strong> “Requirements complete. Ready for design phase?”</li>
+</ul>
+
+<h3 id="3️⃣-design-mode-specdesign">3️⃣ Design Mode (<code class="language-plaintext highlighter-rouge">@spec:design</code>)</h3>
+<p>Define HOW it will be built with technical specifications.</p>
+<ul>
+  <li><strong>Input:</strong> Approved requirements</li>
+  <li><strong>Output:</strong> <code class="language-plaintext highlighter-rouge">design.md</code> with architecture, APIs, and data models</li>
+  <li><strong>Gate:</strong> “Technical design complete. Ready for task breakdown?”</li>
+</ul>
+
+<h3 id="4️⃣-tasks-mode-spectasks">4️⃣ Tasks Mode (<code class="language-plaintext highlighter-rouge">@spec:tasks</code>)</h3>
+<p>Break down design into TDD implementation steps.</p>
+<ul>
+  <li><strong>Input:</strong> Approved design</li>
+  <li><strong>Output:</strong> <code class="language-plaintext highlighter-rouge">tasks.md</code> with Red-Green-Refactor cycles</li>
+  <li><strong>Gate:</strong> “Task breakdown complete. Ready to implement?”</li>
+</ul>
+
+<h3 id="5️⃣-implementation-mode-specexecute">5️⃣ Implementation Mode (<code class="language-plaintext highlighter-rouge">@spec:execute</code>)</h3>
+<p>Execute the implementation plan using TDD.</p>
+<ul>
+  <li><strong>Input:</strong> Task breakdown</li>
+  <li><strong>Output:</strong> Working, tested code</li>
+  <li><strong>Approaches:</strong> TDD, Standard, Collaborative, or Self-implementation</li>
+</ul>
+
+<h2 id="-commands-reference">🧰 Commands Reference</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phase</th>
+      <th>Command</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1️⃣</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec</code> or <code class="language-plaintext highlighter-rouge">@spec [description]</code></td>
+      <td>Break down project into features</td>
+    </tr>
+    <tr>
+      <td>2️⃣</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:requirements [feature]</code></td>
+      <td>Create EARS requirements</td>
+    </tr>
+    <tr>
+      <td>3️⃣</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:design</code></td>
+      <td>Generate technical design</td>
+    </tr>
+    <tr>
+      <td>4️⃣</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:tasks</code></td>
+      <td>Create TDD implementation plan</td>
+    </tr>
+    <tr>
+      <td>5️⃣</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:execute [feature]</code></td>
+      <td>Execute implementation</td>
+    </tr>
+    <tr>
+      <td>⚡</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:advanced</code></td>
+      <td>Enhanced enterprise analysis</td>
+    </tr>
+    <tr>
+      <td>📋</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:list</code> or <code class="language-plaintext highlighter-rouge">@spec:list</code></td>
+      <td>List all features</td>
+    </tr>
+    <tr>
+      <td>📊</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:status</code> or <code class="language-plaintext highlighter-rouge">@spec:status</code></td>
+      <td>Show implementation status</td>
+    </tr>
+    <tr>
+      <td>❓</td>
+      <td><code class="language-plaintext highlighter-rouge">@spec:help</code> or <code class="language-plaintext highlighter-rouge">@spec:help</code></td>
+      <td>Command help</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="️-key-concepts">🏗️ Key Concepts</h2>
+
+<h3 id="-ears-requirements-format">📝 EARS Requirements Format</h3>
+<p>Structured, testable requirements using standardized patterns:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ubiquitous</strong></td>
+      <td>“The system SHALL [requirement]”</td>
+    </tr>
+    <tr>
+      <td><strong>Event-Driven</strong></td>
+      <td>“WHEN [trigger] THEN the system SHALL [response]”</td>
+    </tr>
+    <tr>
+      <td><strong>State-Driven</strong></td>
+      <td>“WHILE [state] the system SHALL [requirement]”</td>
+    </tr>
+    <tr>
+      <td><strong>Conditional</strong></td>
+      <td>“IF [condition] THEN the system SHALL [requirement]”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+<blockquote>
+  <p>WHEN a user enters incorrect credentials three times THEN the system SHALL lock the account for 15 minutes.</p>
+</blockquote>
+
+<h3 id="-test-driven-development-tdd">🧪 Test-Driven Development (TDD)</h3>
+<p>Every implementation follows the Red-Green-Refactor cycle:</p>
+<ol>
+  <li><strong>🔴 Red</strong>: Write failing test</li>
+  <li><strong>🟢 Green</strong>: Write minimal code to pass</li>
+  <li><strong>🔄 Refactor</strong>: Improve code while keeping tests green</li>
+</ol>
+
+<h3 id="-quality-gates">✅ Quality Gates</h3>
+<ul>
+  <li><strong>Requirements:</strong> Testable, specific, EARS-formatted</li>
+  <li><strong>Design:</strong> Addresses all requirements, technically sound</li>
+  <li><strong>Tasks:</strong> Granular, actionable, includes test scenarios</li>
+</ul>
+
+<h2 id="️-project-structure">🗂️ Project Structure</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>your-project/
+└── features/                     # Generated specifications
+    └── [feature-name]/
+        ├── requirements.md       # EARS requirements
+        ├── design.md            # Technical design
+        ├── tasks.md             # TDD task breakdown
+        └── task_*_completed.md  # Completion summaries
+</code></pre></div></div>
+
+<h2 id="-why-this-works">💡 Why This Works</h2>
+
+<ul>
+  <li>❌ Context overload → ✅ Focused commands</li>
+  <li>❌ Reliability issues → ✅ Smaller, reliable operations</li>
+  <li>❌ Poor iteration → ✅ Independent phase modification</li>
+  <li>❌ Vague requirements → ✅ EARS precision</li>
+</ul>
+
+<p><strong>Benefits:</strong></p>
+<ul>
+  <li><strong>Human Control:</strong> Explicit approval gates</li>
+  <li><strong>Quality Assurance:</strong> Built-in testing via TDD</li>
+  <li><strong>Iterative:</strong> Easy to refine individual phases</li>
+  <li><strong>Scalable:</strong> Works for simple features to complex systems</li>
+</ul>
+
+<hr />
+
+<h2 id="-see-also">🔗 See Also</h2>
+
+<ul>
+  <li><a href="./glossary.md">Glossary</a></li>
+  <li><a href="./workflow.md">Agent Workflow Overview</a></li>
+  <li><a href="./routing-rules.md">Routing Rules &amp; Best Practices</a></li>
+  <li><a href="./project-configuration.md">Project Configuration Guide</a></li>
+  <li><a href="./lsp.md">LSP Integration Guide</a></li>
+</ul>
+
+
+    </div>
+</article>
+        </div>
+    </main><footer class="site-footer">
+    <div class="wrapper">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Akawaka OpenCode</h3>
+                <p>Ready-to-use, opinionated OpenCode configuration built for Akawaka workflows. Less setup, more shipping.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul><li><a href="/opencode/">Home</a></li><li><a href="/opencode/docs/">Documentation</a></li><li><a href="/opencode/docs/spec-drive-agentic-dev/">Workflow</a></li><li><a href="/opencode/docs/project-configuration/">Getting Started</a></li></ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/opencode/docs/spec-drive-agentic-dev/">Methodology</a></li>
+                    <li><a href="/opencode/docs/glossary/">Glossary</a></li>
+                    <li><a href="/opencode/docs/tips/">Tips & Tricks</a></li>
+                    <li><a href="https://github.com/akawaka/opencode" target="_blank" rel="noopener">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Akawaka Team. Made with ❤️ by the Akawaka Team.</p>
+        </div>
+    </div>
+</footer><script>
+        // Simple smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.site-nav');
+        
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
