@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Opencode Usage Tips
 
 A curated collection of practical tips and tricks for getting the most out of Opencode. Simple, focused, and always a bit fancy.

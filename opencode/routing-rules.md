@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # 🛣️ Routing Rules & Best Practices for the `@router` Agent
 
 The `@router` agent is the central coordinator for all incoming user requests in the Opencode agentic development workflow. Its job: analyze each request, determine the best specialized agent, and ensure tasks are routed efficiently and accurately.

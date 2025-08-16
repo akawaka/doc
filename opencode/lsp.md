@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # ⚡ Language Server Protocol (LSP) Integration
 
 Unlock the full power of Opencode with Language Server Protocols! LSPs provide real-time code intelligence, error detection, and smart refactoring for a seamless AI-assisted development experience.
