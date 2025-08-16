@@ -11,12 +11,11 @@ projects:
 # Akawaka Documentation Hub
 
 Welcome! Explore our projects:
-
 <div class="cards">
-  {% for project in page.projects %}
-    <a class="card" href="{{ project.url }}">
-      <h2>{{ project.name }}</h2>
-      <p>{{ project.description }}</p>
-    </a>
-  {% endfor %}
+{% for project in page.projects %}
+<a class="card" href="{{ project.url }}">
+<h2>{{ project.name }}</h2>
+<p>{{ project.description }}</p>
+</a>
+{% endfor %}
 </div>
