@@ -48,12 +48,53 @@ defaults:
       
 # SEO and social
 author: "Akawaka Team"
+title: Akawaka Documentation Hub
+description: Centralized docs for all Akawaka projects.
+
+url: "https://akawaka.github.io"
+baseurl: "/doc"
+
+author: "Akawaka Team"
 twitter:
   username: akawaka
 social:
   name: "Akawaka"
   links:
     - "https://github.com/akawaka"
+
+nav_links:  # Used by your layouts/includes for navigation
+  - title: Home
+    url: /
+  - title: Opencode
+    url: /opencode/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "opencode"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "index"
+    values:
+      layout: "default"
 
 # Exclude from build
 exclude:
@@ -78,3 +119,11 @@ exclude:
 # Include specific files
 include:
   - _pages
+
+# Enable relative links for Markdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: 1..4
+  parse_block_html: true
