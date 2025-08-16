@@ -1,0 +1,78 @@
+title: Akawaka Documentation Hub
+description: Centralized docs for all Akawaka projects.
+collections: []
+
+url: "https://akawaka.github.io"
+baseurl: "/doc"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+nav:
+  - title: Home
+    url: /
+  - title: Opencode
+    url: /opencode/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
+  - scope:
+      path: "index"
+    values:
+      layout: "default"
+      
+# SEO and social
+author: "Akawaka Team"
+twitter:
+  username: akawaka
+social:
+  name: "Akawaka"
+  links:
+    - "https://github.com/akawaka"
+
+# Exclude from build
+exclude:
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - dist/
+  - install.sh
+  - .git/
+  - .github/
+  - README.md
+
+# Include specific files
+include:
+  - _pages
