@@ -9,12 +9,12 @@ nav_links:
   - title: Home
     url: /
   - title: Opencode
-    url: /opencode/
+    url: /doc/opencode/
 
 collections:
   opencode:
     output: true
-    permalink: /opencode/:path/
+    permalink: /doc/opencode/:path/
 #  anotherproject:
 #    output: true
 #    permalink: /anotherproject/:path/
