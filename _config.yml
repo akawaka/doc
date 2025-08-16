@@ -16,6 +16,7 @@ social:
   name: "Akawaka"
   links:
     - "https://github.com/akawaka"
+    - "https://www.akawaka.fr/"
 
 nav_links:
   - title: Home
@@ -28,7 +29,17 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-github-metadata  # ADD THIS for better GitHub integration
+  - jekyll-github-metadata
+
+# SEO and Social
+logo: /assets/images/akawaka-logo.png
+social:
+  name: Akawaka
+  links:
+    - https://github.com/akawaka
+    - https://www.akawaka.fr/
+    - https://www.linkedin.com/company/akawaka
+    - https://twitter.com/akawaka
 
 # Default layouts
 defaults:
@@ -82,3 +93,27 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+      start_line: 1
+
+# Collections (if needed for future expansion)
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Site-wide settings
+timezone: Europe/Paris
+lang: en
+
+# Performance optimizations
+sass:
+  style: compressed
+  sourcemap: never
+
+# Security
+webrick:
+  headers:
+    X-Frame-Options: DENY
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: "1; mode=block"
+    Referrer-Policy: "strict-origin-when-cross-origin"
