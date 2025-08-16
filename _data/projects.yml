@@ -1,0 +1,33 @@
+# Projects configuration for Akawaka Documentation Hub
+# This file defines all projects that will be displayed on the homepage
+
+projects:
+  - title: "🔧 Opencode Projects"
+    description: "Explore our open-source projects and contributions to the developer community."
+    url: "/opencode/"
+    type: "internal"
+    category: "documentation"
+    featured: true
+    
+  - title: "🌐 Company Website"
+    description: "Learn more about Akawaka, our services, and how we can help with your projects."
+    url: "https://www.akawaka.fr/"
+    type: "external"
+    category: "company"
+    featured: true
+    
+  - title: "💻 GitHub Repository"
+    description: "Access our source code, contribute to projects, and stay updated with our latest developments."
+    url: "https://github.com/akawaka"
+    type: "external"
+    category: "development"
+    featured: true
+
+# Future projects can be added here following the same structure
+# Example:
+# - title: "📚 API Documentation"
+#   description: "Complete API reference for all Akawaka services."
+#   url: "/api/"
+#   type: "internal"
+#   category: "documentation"
+#   featured: false

@@ -24,12 +24,17 @@ nav_links:
   - title: Opencode
     url: /opencode/
 
-# Plugins
+# Plugins - Enhanced for better Markdown processing and cross-linking
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-github-metadata
+  - jekyll-relative-links      # Enables relative links between markdown files
+  - jekyll-optional-front-matter  # Allows markdown files without front matter
+  - jekyll-readme-index        # Treats README.md as index files
+  - jekyll-default-layout      # Applies default layouts automatically
+  - jekyll-titles-from-headings  # Generates page titles from headings
 
 # SEO and Social
 logo: /assets/images/akawaka-logo.png
@@ -41,7 +46,7 @@ social:
     - https://www.linkedin.com/company/akawaka
     - https://twitter.com/akawaka
 
-# Default layouts
+# Default layouts - Enhanced for automatic processing
 defaults:
   - scope:
       path: ""
@@ -54,9 +59,18 @@ defaults:
     values:
       layout: "page"
   - scope:
+      path: "opencode/**/*.md"
+    values:
+      layout: "page"
+  - scope:
       path: "index"
     values:
       layout: "default"
+  # Automatically process all markdown files
+  - scope:
+      path: "**/*.md"
+    values:
+      layout: "page"
 
 # Exclude from build
 exclude:
@@ -117,3 +131,33 @@ webrick:
     X-Content-Type-Options: nosniff
     X-XSS-Protection: "1; mode=block"
     Referrer-Policy: "strict-origin-when-cross-origin"
+
+# Plugin configurations
+relative_links:
+  enabled: true
+  collections: true
+
+optional_front_matter:
+  remove_originals: true
+
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: true
+
+titles_from_headings:
+  enabled: true
+  strip_title: true
+  collections: true
+
+# CSS and assets configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+  sourcemap: never
+
+# Ensure proper CSS loading
+assets:
+  sources:
+    - assets/css
+    - _sass

@@ -62,30 +62,37 @@ layout: default
   </p>
 </section>
 
+<!-- Dynamic Projects Section - Generated from _data/projects.yml -->
 <section class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl); margin: var(--spacing-2xl) 0;">
-  <div class="card">
-    <h3 class="card-title">🔧 Opencode Projects</h3>
-    <div class="card-content">
-      <p>Explore our open-source projects and contributions to the developer community.</p>
-      <a href="{{ '/opencode/' | relative_url }}" class="btn btn-secondary">View Projects →</a>
-    </div>
-  </div>
-  
-  <div class="card">
-    <h3 class="card-title">🌐 Company Website</h3>
-    <div class="card-content">
-      <p>Learn more about Akawaka, our services, and how we can help with your projects.</p>
-      <a href="https://www.akawaka.fr/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Visit akawaka.fr →</a>
-    </div>
-  </div>
-  
-  <div class="card">
-    <h3 class="card-title">💻 GitHub Repository</h3>
-    <div class="card-content">
-      <p>Access our source code, contribute to projects, and stay updated with our latest developments.</p>
-      <a href="https://github.com/akawaka" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-    </div>
-  </div>
+  {% for project in site.data.projects.projects %}
+    {% if project.featured %}
+      <div class="card">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <div class="card-content">
+          <p>{{ project.description }}</p>
+          {% if project.type == "external" %}
+            <a href="{{ project.url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              {% if project.url contains "github" %}
+                View on GitHub →
+              {% elsif project.url contains "akawaka.fr" %}
+                Visit akawaka.fr →
+              {% else %}
+                Visit Site →
+              {% endif %}
+            </a>
+          {% else %}
+            <a href="{{ project.url | relative_url }}" class="btn btn-secondary">
+              {% if project.url contains "opencode" %}
+                View Projects →
+              {% else %}
+                Learn More →
+              {% endif %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </section>
 
 <section class="highlight-box success">
