@@ -2,14 +2,13 @@ title: Akawaka Documentation Hub
 description: Centralized docs for all Akawaka projects.
 
 url: "https://akawaka.github.io/doc"
-#baseurl: "/doc"
-baseurl: ""
+baseurl: "/doc"
       
 nav_links:
   - title: Home
     url: /
   - title: Opencode
-    url: /doc/opencode/
+    url: /opencode/
 
 collections:
   opencode:
