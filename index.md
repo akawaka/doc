@@ -4,7 +4,7 @@ title: Akawaka Documentation Hub
 projects:
   - name: Opencode
     description: "Developer tools and documentation automation."
-    url: "/opencode/"
+    url: "https://github.com/akawaka/opencode/"
   # Add more projects here!
 ---
 
