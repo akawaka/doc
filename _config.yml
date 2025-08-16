@@ -17,7 +17,7 @@ social:
   links:
     - "https://github.com/akawaka"
 
-nav_links:  # Used by your layouts/includes for navigation
+nav_links:
   - title: Home
     url: /
   - title: Opencode
@@ -28,6 +28,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-github-metadata  # ADD THIS for better GitHub integration
 
 # Default layouts
 defaults:
@@ -70,10 +71,14 @@ exclude:
 include:
   - _pages
 
-# Enable relative links for Markdown
+# Enhanced Kramdown configuration for better Markdown parsing
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
   toc_levels: 1..4
   parse_block_html: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
