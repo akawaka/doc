@@ -7,7 +7,7 @@ baseurl: "/doc"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-slate
 
 author: "Akawaka Team"
 twitter:
@@ -52,16 +52,16 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: "page"
+      layout: "default"
   - scope:
       path: "opencode"
       type: "pages"
     values:
-      layout: "page"
+      layout: "default"
   - scope:
       path: "opencode/**/*.md"
     values:
-      layout: "page"
+      layout: "default"
   - scope:
       path: "index"
     values:
@@ -70,7 +70,7 @@ defaults:
   - scope:
       path: "**/*.md"
     values:
-      layout: "page"
+      layout: "default"
 
 # Exclude from build
 exclude:
@@ -119,19 +119,6 @@ collections:
 timezone: Europe/Paris
 lang: en
 
-# Performance optimizations
-sass:
-  style: compressed
-  sourcemap: never
-
-# Security
-webrick:
-  headers:
-    X-Frame-Options: DENY
-    X-Content-Type-Options: nosniff
-    X-XSS-Protection: "1; mode=block"
-    Referrer-Policy: "strict-origin-when-cross-origin"
-
 # Plugin configurations
 relative_links:
   enabled: true
@@ -149,15 +136,3 @@ titles_from_headings:
   enabled: true
   strip_title: true
   collections: true
-
-# CSS and assets configuration
-sass:
-  sass_dir: _sass
-  style: compressed
-  sourcemap: never
-
-# Ensure proper CSS loading
-assets:
-  sources:
-    - assets/css
-    - _sass
