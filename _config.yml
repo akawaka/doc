@@ -7,7 +7,7 @@ baseurl: "/doc"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-slate
+remote_theme: pages-themes/slate@v0.2.0
 
 author: "Akawaka Team"
 twitter:
@@ -26,6 +26,7 @@ nav_links:
 
 # Plugins - Enhanced for better Markdown processing and cross-linking
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
