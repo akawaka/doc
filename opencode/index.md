@@ -1,6 +1,6 @@
 ---
 title: "Documentation Hub"
-layout: page
+layout: default
 description: "Your gateway to all technical guides, methodologies, and reference materials for Opencode."
 ---
 
@@ -8,7 +8,7 @@ description: "Your gateway to all technical guides, methodologies, and reference
 
 Welcome to the **documentation center**! 
 
-This README is your gateway to all technical guides, methodologies, and reference materials in the `docs/` directory. Whether you’re a new contributor, an advanced user, or an agent developer, you’ll find everything you need to understand, configure, and extend Opencode.
+This README is your gateway to all technical guides, methodologies, and reference materials in the `docs/` directory. Whether you're a new contributor, an advanced user, or an agent developer, you'll find everything you need to understand, configure, and extend Opencode.
 
 ---
 
@@ -30,8 +30,8 @@ This README is your gateway to all technical guides, methodologies, and referenc
 
 ## 📑 Document Summaries
 
-<details>
-<summary><strong>1. <a href="./glossary.md">glossary.md</a> — Key Terms & Concepts</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>1. <a href="./glossary.md">glossary.md</a> — Key Terms & Concepts</strong></summary>
 
 A concise glossary defining essential Opencode terms:  
 - **Agent** & **Subagent** roles  
@@ -39,11 +39,11 @@ A concise glossary defining essential Opencode terms:
 - **TDD** (Test-Driven Development)  
 - **Approval Gate** and more
 
-_Recommended for all users to ensure a shared understanding of Opencode’s language._
+_Recommended for all users to ensure a shared understanding of Opencode's language._
 </details>
 
-<details>
-<summary><strong>2. <a href="./routing-rules.md">routing-rules.md</a> — Agent Routing & Best Practices</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>2. <a href="./routing-rules.md">routing-rules.md</a> — Agent Routing & Best Practices</strong></summary>
 
 Comprehensive guide to the `@router` agent:  
 - Central request coordination  
@@ -54,8 +54,8 @@ Comprehensive guide to the `@router` agent:
 _See also: [workflow.md](./workflow.md) for agent lifecycle diagrams._
 </details>
 
-<details>
-<summary><strong>3. <a href="./workflow.md">workflow.md</a> — Agent Workflow Overview</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>3. <a href="./workflow.md">workflow.md</a> — Agent Workflow Overview</strong></summary>
 
 Step-by-step and visual overview of:  
 - Agent and subagent communication  
@@ -66,8 +66,8 @@ Step-by-step and visual overview of:
 _Use this to understand how Opencode orchestrates complex development tasks._
 </details>
 
-<details>
-<summary><strong>4. <a href="./lsp.md">lsp.md</a> — Language Server Protocol Integration</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>4. <a href="./lsp.md">lsp.md</a> — Language Server Protocol Integration</strong></summary>
 
 Explains how LSPs empower Opencode with:  
 - Structured code analysis  
@@ -77,8 +77,8 @@ Explains how LSPs empower Opencode with:
 _Enhance your development experience with LSP-powered features._
 </details>
 
-<details>
-<summary><strong>5. <a href="./project-configuration.md">project-configuration.md</a> — Project Configuration Guide</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>5. <a href="./project-configuration.md">project-configuration.md</a> — Project Configuration Guide</strong></summary>
 
 How to tailor Opencode for your project:  
 - Overriding global settings  
@@ -88,10 +88,10 @@ How to tailor Opencode for your project:
 _Ensure your project is set up for success and consistency._
 </details>
 
-<details>
-<summary><strong>6. <a href="./spec-drive-agentic-dev.md">spec-drive-agentic-dev.md</a> — Spec-Driven Agentic Development</strong></summary>
+<details markdown="1">
+<summary markdown="span"><strong>6. <a href="./spec-drive-agentic-dev.md">spec-drive-agentic-dev.md</a> — Spec-Driven Agentic Development</strong></summary>
 
-The definitive guide to Opencode’s methodology:  
+The definitive guide to Opencode's methodology:  
 - **5-phase workflow:** Plan → Requirements → Design → Tasks → Execute  
 - **EARS** requirements format  
 - **TDD** practices  
@@ -116,7 +116,7 @@ _Adopt this process for high-quality, testable, and maintainable software._
 
 ## 🚦 Need More Help?
 
-- For **troubleshooting** or advanced usage, check the relevant document’s “See Also” or cross-links.
+- For **troubleshooting** or advanced usage, check the relevant document's "See Also" or cross-links.
 - For **contributing** or extending Opencode, start with the methodology and workflow docs.
 
 ---
