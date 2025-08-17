@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 # Opencode Usage Tips
@@ -43,13 +43,3 @@ A curated collection of practical tips and tricks for getting the most out of Op
 > **How:**  
 > - `ctrl+right` — Enter a child (subagent) session  
 > - `ctrl+left` — Return to the parent session
-
-- **Why:** Opencode supports hierarchical agent sessions. This feature lets you dive into subagent conversations (for example, when an agent spawns a helper agent) and then return to your main session, keeping complex workflows organized and easy to follow.
-- **Reference:** [Demo by @adamdotdev on X](https://x.com/adamdotdev/status/1956415444706799786)
-
----
-
-## ✨ More Tips?
-
-Have a favorite workflow or configuration trick?  
-Contribute your tips to this file!
