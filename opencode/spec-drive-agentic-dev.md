@@ -13,38 +13,38 @@ A structured methodology for building software features through specifications, 
 ## 🏁 The 5-Phase Workflow
 
 ```
-1. @spec [description]         → Feature List         → [Approval Gate]
-2. @spec:requirements [feature] → requirements.md      → [Approval Gate]
-3. @spec:design                 → design.md            → [Approval Gate]
-4. @spec:tasks                  → tasks.md             → [Approval Gate]
-5. @spec:execute [feature]      → Working Code         → [Testing & Deploy]
+1. @spec [description]          → Feature List         → [Approval Gate]
+2. @spec/requirements [feature] → requirements.md      → [Approval Gate]
+3. @spec/design                 → design.md            → [Approval Gate]
+4. @spec/tasks                  → tasks.md             → [Approval Gate]
+5. @spec/execute [feature]      → Working Code         → [Testing & Deploy]
 ```
 
-### 1️⃣ Planning Mode (`@spec`, `@spec:plan`)
+### 1️⃣ Planning Mode (`@spec`)
 Break down a project goal into manageable features.
 - **Input:** Project description
 - **Output:** Feature directories with basic requirements
 - **Gate:** "Ready to detail requirements for the first feature?"
 
-### 2️⃣ Requirements Mode (`@spec:requirements`)
+### 2️⃣ Requirements Mode (`@spec/requirements`)
 Define WHAT needs to be built using EARS format.
 - **Input:** Feature name
 - **Output:** Detailed `requirements.md` with testable specifications
 - **Gate:** "Requirements complete. Ready for design phase?"
 
-### 3️⃣ Design Mode (`@spec:design`)
+### 3️⃣ Design Mode (`@spec/design`)
 Define HOW it will be built with technical specifications.
 - **Input:** Approved requirements
 - **Output:** `design.md` with architecture, APIs, and data models
 - **Gate:** "Technical design complete. Ready for task breakdown?"
 
-### 4️⃣ Tasks Mode (`@spec:tasks`)
+### 4️⃣ Tasks Mode (`@spec/tasks`)
 Break down design into TDD implementation steps.
 - **Input:** Approved design
 - **Output:** `tasks.md` with Red-Green-Refactor cycles
 - **Gate:** "Task breakdown complete. Ready to implement?"
 
-### 5️⃣ Implementation Mode (`@spec:execute`)
+### 5️⃣ Implementation Mode (`@spec/execute`)
 Execute the implementation plan using TDD.
 - **Input:** Task breakdown
 - **Output:** Working, tested code
@@ -54,17 +54,17 @@ Execute the implementation plan using TDD.
 
 ## 🧰 Commands Reference
 
-| Phase | Command                         | Purpose |
-|-------|---------------------------------|---------|
-| 1️⃣   | `@spec` or `@spec [description]`| Break down project into features |
-| 2️⃣   | `@spec:requirements [feature]`  | Create EARS requirements |
-| 3️⃣   | `@spec:design`                  | Generate technical design |
-| 4️⃣   | `@spec:tasks`                   | Create TDD implementation plan |
-| 5️⃣   | `@spec:execute [feature]`       | Execute implementation |
-| ⚡    | `@spec:advanced`                | Enhanced enterprise analysis |
-| 📋    | `@spec:list` or `@spec:list`    | List all features |
-| 📊    | `@spec:status` or `@spec:status`| Show implementation status |
-| ❓    | `@spec:help` or `@spec:help`    | Command help |
+| Phase | Command                          | Purpose                          |
+|-------|----------------------------------|----------------------------------|
+| 1️⃣   | `@spec` or `@spec [description]` | Break down project into features |
+| 2️⃣   | `@spec/requirements [feature]`   | Create EARS requirements         |
+| 3️⃣   | `@spec/design`                   | Generate technical design        |
+| 4️⃣   | `@spec/tasks`                    | Create TDD implementation plan   |
+| 5️⃣   | `@spec/execute [feature]`        | Execute implementation           |
+| ⚡     | `@spec/advanced`                 | Enhanced enterprise analysis     |
+| 📋    | `@spec/list`                     | List all features                |
+| 📊    | `@spec/status`                   | Show implementation status       |
+| ❓     | `@spec/help`                     | Command help                     |
 
 
 

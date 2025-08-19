@@ -31,22 +31,22 @@ The `@router` agent is the central coordinator for all incoming user requests in
 | Agent Name           | Role & Expertise                                                                       | When to Route Here                                                  |
 |----------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------|
 | `@build`             | Senior engineer, strict TDD and "Tidy First" principles for clean, test-driven code.   | For disciplined TDD and clean code implementation.                  |
-| `@code:review`       | Automated, structured code reviews and feedback.                                       | For code review or feedback on changes.                             |
+| `@code/review`       | Automated, structured code reviews and feedback.                                       | For code review or feedback on changes.                             |
 | `@general`           | Handles complex, multi-step research, code search, and open-ended tasks.               | For broad, exploratory, or uncategorized requests.                  |
 | `@router`            | Request router (this agent). Analyzes user intent and directs to the optimal agent.    | For ambiguous, multi-domain, or triage requests.                    |
-| `@spec:advanced`     | Enterprise-grade specifications and deep analysis.                                     | For advanced, in-depth, or enterprise-level requirements/analysis.  |
-| `@spec:design`       | Technical designer. Generates technical design from requirements.                      | For technical design or architecture for a feature.                 |
-| `@spec:execute`      | Implementation executor. Executes the implementation plan from tasks.md.               | To begin or automate feature implementation.                        |
-| `@spec:help`         | Explains spec commands and methodology.                                                | For help with spec-driven development or commands.                  |
-| `@spec:list`         | Lists all available features/specs in the project.                                     | For a list of features or specs.                                    |
-| `@spec:plan`         | Project planner. Breaks down a project description into a feature plan.                | For planning a new project or feature set.                          |
-| `@spec:requirements` | Details EARS-formatted requirements for a feature.                                     | To define or refine feature requirements.                           |
-| `@spec:status`       | Shows implementation status of all features.                                           | For progress or status of features/specs.                           |
-| `@spec:tasks`        | Converts design into implementable TDD tasks.                                          | For a step-by-step implementation plan.                             |
-| `@tools:agent`       | Executes custom or advanced tool-based operations.                                     | For advanced tool execution or custom automation tasks.             |
-| `@tools:doc`         | Creates, updates, or maintains Markdown documentation.                                 | For generating or updating project documentation.                   |
-| `@tools:qa`          | Runs code quality, linting, and static analysis tools.                                 | For code quality checks or automated QA.                            |
-| `@tools:understand`  | Progressively analyzes and explains legacy codebases.                                  | For understanding or documenting legacy code.                       |
+| `@spec/advanced`     | Enterprise-grade specifications and deep analysis.                                     | For advanced, in-depth, or enterprise-level requirements/analysis.  |
+| `@spec/design`       | Technical designer. Generates technical design from requirements.                      | For technical design or architecture for a feature.                 |
+| `@spec/execute`      | Implementation executor. Executes the implementation plan from tasks.md.               | To begin or automate feature implementation.                        |
+| `@spec/help`         | Explains spec commands and methodology.                                                | For help with spec-driven development or commands.                  |
+| `@spec/list`         | Lists all available features/specs in the project.                                     | For a list of features or specs.                                    |
+| `@spec/plan`         | Project planner. Breaks down a project description into a feature plan.                | For planning a new project or feature set.                          |
+| `@spec/requirements` | Details EARS-formatted requirements for a feature.                                     | To define or refine feature requirements.                           |
+| `@spec/status`       | Shows implementation status of all features.                                           | For progress or status of features/specs.                           |
+| `@spec/tasks`        | Converts design into implementable TDD tasks.                                          | For a step-by-step implementation plan.                             |
+| `@tools/agent`       | Executes custom or advanced tool-based operations.                                     | For advanced tool execution or custom automation tasks.             |
+| `@tools/doc`         | Creates, updates, or maintains Markdown documentation.                                 | For generating or updating project documentation.                   |
+| `@tools/qa`          | Runs code quality, linting, and static analysis tools.                                 | For code quality checks or automated QA.                            |
+| `@tools/understand`  | Progressively analyzes and explains legacy codebases.                                  | For understanding or documenting legacy code.                       |
 
 > This list evolves over time and can be extended with custom agents as needed. Always refer to the linked documentation for the latest details.
 
@@ -54,7 +54,7 @@ The `@router` agent is the central coordinator for all incoming user requests in
 
 ## 🌟 Best Practices for Routing
 
-- **Be Explicit:** Specify the target agent in your command when possible (e.g., `@doc:generate`).
+- **Be Explicit:** Specify the target agent in your command when possible (e.g., `@doc/generate`).
 - **Leverage Approval Gates:** Route to `@spec` for requirements/design approval before implementation or QA.
 - **Defer to Specialized Agents:** Use specialized agents for tasks within their domain.
 - **Handle Ambiguity:** If a request is unclear, `@router` should ask clarifying questions before routing.
@@ -70,10 +70,10 @@ The `@router` agent is the central coordinator for all incoming user requests in
   - _Routing_: `@router` detects a planning request and routes to `@spec` for feature breakdown.
 - **Documentation Update:**
   - _User_: "Update the README to include the new API endpoint."
-  - _Routing_: `@router` routes to `@doc` for documentation generation and maintenance.
+  - _Routing_: `@router` routes to `@tools/doc` for documentation generation and maintenance.
 - **Test Coverage Inquiry:**
   - _User_: "How much of the codebase is covered by tests?"
-  - _Routing_: `@router` routes to `@qa` for test coverage analysis.
+  - _Routing_: `@router` routes to `@tools/qa` for test coverage analysis.
 - **Ambiguous Request:**
   - _User_: "Can you help me with this error?"
   - _Routing_: `@router` asks clarifying questions, then routes accordingly.

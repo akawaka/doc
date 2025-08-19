@@ -20,22 +20,22 @@ flowchart TB
     Build["@build"]
     Router["@router (Request Router)"]
 
-    CodeReviw["@code:review (Code Review)"]
+    CodeReviw["@code/review (Code Review)"]
 
-    SpecPlan["@spec:plan / @spec (Project Planner)"]
-    SpecList["@spec:list (Feature Listing)"]
-    SpecReq["@spec:requirements (Requirements)"]
-    SpecDesign["@spec:design (Design)"]
-    SpecTasks["@spec:tasks (Task Breakdown)"]
-    SpecImpl["@spec:execute (Standard/Automated Implementation)"]
-    SpecStatus["@spec:status (Status Reporting)"]
-    SpecHelp["@spec:help (Guidance & Agent List)"]
-    SpecAdv["@spec:advanced (Advanced Analysis)"]
+    SpecPlan["@spec (Project Planner)"]
+    SpecList["@spec/list (Feature Listing)"]
+    SpecReq["@spec/requirements (Requirements)"]
+    SpecDesign["@spec/design (Design)"]
+    SpecTasks["@spec/tasks (Task Breakdown)"]
+    SpecImpl["@spec/execute (Standard/Automated Implementation)"]
+    SpecStatus["@spec/status (Status Reporting)"]
+    SpecHelp["@spec/help (Guidance & Agent List)"]
+    SpecAdv["@spec/advanced (Advanced Analysis)"]
 
-    ToolsAgent["@tools:agent (Agent creation)"]
-    ToolsDoc["@tools:doc (Documentation)"]
-    ToolsQa["@tools:qa (Quality Assurance)"]
-    ToolsUnderstand["@tools:understand (Codebase Understanding)"]
+    ToolsAgent["@tools/agent (Agent creation)"]
+    ToolsDoc["@tools/doc (Documentation)"]
+    ToolsQa["@tools/qa (Quality Assurance)"]
+    ToolsUnderstand["@tools/understand (Codebase Understanding)"]
 
 
     User -->|Interacts| Router
@@ -102,17 +102,17 @@ flowchart TB
 - **User Interactions:** Users can start with any agent, but typically use `@router` to route their request, `@general` for open-ended help, or `@build` for disciplined TDD.
 - **Request Routing:** The `@router` agent analyzes each request and dispatches it to the most suitable specialized agent, ensuring efficient handling and expert support.
 - **Spec-Driven Pipeline:**
-  1. **@spec:plan** or **@spec**: Project planning and feature breakdown.
-  2. **@spec:list**: Listing all features.
-  3. **@spec:requirements**: Detailing requirements in EARS format.
-  4. **@spec:design**: Creating technical design.
-  5. **@spec:tasks**: Breaking design into TDD tasks.
-  6. **@spec:execute**: Implementing features.
-  7. **@tools:qa**: Running quality checks.
-  8. **@tools:doc**: Updating documentation.
-  9. **@spec:status**: Reporting status.
+  1. **@spec**: Project planning and feature breakdown.
+  2. **@spec/list**: Listing all features.
+  3. **@spec/requirements**: Detailing requirements in EARS format.
+  4. **@spec/design**: Creating technical design.
+  5. **@spec/tasks**: Breaking design into TDD tasks.
+  6. **@spec/execute**: Implementing features.
+  7. **@tools/qa**: Running quality checks.
+  8. **@tools/doc**: Updating documentation.
+  9. **@spec/status**: Reporting status.
 - **Parallel and On-Demand Tools:** Documentation and codebase understanding tools can be invoked at any time, supporting parallelism and deeper analysis.
-- **Status and Guidance:** Agents like @spec:status, @spec:help, and @spec:advanced provide ongoing feedback, guidance, and advanced analysis.
+- **Status and Guidance:** Agents like `@spec/status`, `@spec/help`, and `@spec/advanced` provide ongoing feedback, guidance, and advanced analysis.
 - **Explicit Approval Gates:** Each phase requires user approval before proceeding, ensuring quality and user control.
 
 This workflow ensures that every request is handled by the most capable agent, with clear transitions, quality checks, and opportunities for user feedback at every stage.
