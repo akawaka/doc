@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-    "allow-plugins": {
-      "cecil/theme-installer": true
+      "allow-plugins": {
+        "cecil/theme-installer": true
+      }
     }
 }
