@@ -1,0 +1,13 @@
+{
+    "name": "akawaka/doc",
+    "description": "The Akawaka Documentation Hub",
+    "type": "project",
+    "authors": [
+        {
+            "name": "fmatsos"
+        }
+    ],
+    "require": {
+      "cecil/theme-docs": "^2.40"
+    }
+}
