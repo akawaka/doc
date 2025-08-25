@@ -21,6 +21,9 @@ jobs:
                 uses: actions/setup-node@v4
                 with:
                     node-version: 18
+            -   name: Composer dependencies
+                run: |
+                    composer require cecil/theme-docs && composer install
             -   name: Build CSS
                 run: |
                     npm install && npm run build
