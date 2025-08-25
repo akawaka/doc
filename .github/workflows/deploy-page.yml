@@ -23,7 +23,9 @@ jobs:
                     node-version: 18
             -   name: Composer dependencies
                 run: |
-                    composer require cecil/theme-docs && composer install
+                    composer config --no-plugins allow-plugins.cecil/theme-installer true
+                    composer require cecil/theme-docs
+                    composer install
             -   name: Build CSS
                 run: |
                     npm install && npm run build
