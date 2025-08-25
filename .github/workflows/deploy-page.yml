@@ -17,18 +17,10 @@ jobs:
                     php-version: '8.3'
                     tools: composer
                     extensions: mbstring, gd, imagick, intl, gettext
-            -   name: Set NodeJs
-                uses: actions/setup-node@v4
-                with:
-                    node-version: 18
             -   name: Composer dependencies
                 run: |
                     composer config --no-plugins allow-plugins.cecil/theme-installer true
-                    composer require cecil/theme-docs
                     composer install
-            -   name: Build CSS
-                run: |
-                    npm install && npm run build
             -   name: Build site with Cecil
                 uses: Cecilapp/Cecil-Action@v3
                 with:
