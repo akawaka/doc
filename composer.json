@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-      "cecil/theme-docs": "^2.40"
+      "cecil/theme-docs": "2.40.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
