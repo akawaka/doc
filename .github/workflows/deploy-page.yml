@@ -18,9 +18,7 @@ jobs:
                     tools: composer
                     extensions: mbstring, gd, imagick, intl, gettext
             -   name: Composer dependencies
-                run: |
-                    composer config --no-plugins allow-plugins.cecil/theme-installer true
-                    composer install
+                run: composer install
             -   name: Build site with Cecil
                 uses: Cecilapp/Cecil-Action@v3
                 with:
