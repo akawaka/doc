@@ -1,12 +1,12 @@
 ---
-title: "Documentation Hub"
+title: "Opencode Configuration"
 layout: default
-description: "Your gateway to all technical guides, methodologies, and reference materials for Opencode."
+description: "Documentation abour Opencode configuration and how to use it."
 ---
 
-# 📚 Documentation Hub
+# 📚 Opencode Configuration
 
-Welcome to the **documentation center**! 
+The current documentation explains how our Opencode configuration works and how to use it.
 
 ### 🆕 Recent Features
 - **GitHub MCP integration:** Streamlined configuration and safe updates
@@ -14,8 +14,6 @@ Welcome to the **documentation center**!
 - **Improved workflow:** Standardized PR/review process leveraging GitHub MCP
 
 See [command-reference.md](./command-reference.md) for details on new commands.
-
-This README is your gateway to all technical guides, methodologies, and reference materials in the `docs/` directory. Whether you're a new contributor, an advanced user, or an agent developer, you'll find everything you need to understand, configure, and extend Opencode.
 
 ---
 
