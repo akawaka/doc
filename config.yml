@@ -1,0 +1,19 @@
+title: Akawaka Documentation Hub
+description: Le Documentation Hub regroupe la documentation techniques de tous les projets Akawaka sur Github
+baseurl: https://akawaka.github.io/doc/
+
+theme:
+  - docs
+
+sidebar:
+  - Opencode
+footer: Copyright © %author%
+github:
+  repo: https://github.com/akawaka/doc
+  branch: main
+docsearch:
+  enabled: false
+  appId: <YOUR_APP_ID>
+  indexName: <YOUR_INDEX_NAME>
+  apiKey: <YOUR_SEARCH_API_KEY>
+  debug: false
