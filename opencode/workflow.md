@@ -95,7 +95,10 @@ flowchart TB
     end
 ```
 
-
+### 🆕 Command Integration
+- Use `/create-pr` to open a pull request directly from your branch, leveraging GitHub MCP.
+- Use `/review` to analyze and improve code before or after PR creation.
+- These commands standardize and automate PR/review steps in the workflow.
 
 ## 📝 Diagram Explanation
 

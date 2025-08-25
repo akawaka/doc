@@ -8,6 +8,13 @@ description: "Your gateway to all technical guides, methodologies, and reference
 
 Welcome to the **documentation center**! 
 
+### 🆕 Recent Features
+- **GitHub MCP integration:** Streamlined configuration and safe updates
+- **New commands:** `/create-pr` and `/review` for PR management and code review
+- **Improved workflow:** Standardized PR/review process leveraging GitHub MCP
+
+See [command-reference.md](./command-reference.md) for details on new commands.
+
 This README is your gateway to all technical guides, methodologies, and reference materials in the `docs/` directory. Whether you're a new contributor, an advanced user, or an agent developer, you'll find everything you need to understand, configure, and extend Opencode.
 
 ---

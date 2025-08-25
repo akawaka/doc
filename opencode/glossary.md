@@ -8,6 +8,11 @@ description: "Essential terms and concepts for Opencode workflows and developmen
 
 This page defines the essential terms and concepts you’ll encounter throughout the documentation and workflow.
 
+- **MCP (Multi-Channel Platform):** Integrates external services (e.g., GitHub) into Opencode workflows.
+- **GitHub MCP:** The GitHub integration within MCP, enabling PR creation, review, and workflow automation.
+- **PR (Pull Request):** A request to merge code changes into a main branch, typically reviewed before acceptance.
+- **Review (Command):** The `/review` command analyzes recent changes and suggests improvements.
+
 ---
 
 ## 🗝️ Key Terms
