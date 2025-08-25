@@ -2,8 +2,8 @@
 # This file defines all projects that will be displayed on the homepage
 
 projects:
-  - title: "🔧 Opencode Projects"
-    description: "Explore our open-source projects and contributions to the developer community."
+  - title: "🔧 Opencode Configuration"
+    description: "Explore the Akawaka opencode configuration and learn how to create your own."
     url: "/opencode/"
     type: "internal"
     category: "documentation"
