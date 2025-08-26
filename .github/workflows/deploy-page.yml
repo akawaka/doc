@@ -11,14 +11,24 @@ jobs:
         steps:
             -   name: Checkout source
                 uses: actions/checkout@v4
+                with:
+                    fetch-depth: 2
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: '8.3'
                     tools: composer
                     extensions: mbstring, gd, imagick, intl, gettext
-            -   name: Composer dependencies
-                run: composer install
+            - name: Install or update Composer deps
+              run: |
+                  set -e
+                  if git diff --quiet HEAD^ -- composer.json composer.lock 2>/dev/null; then
+                      echo "composer.json/lock unchanged → install"
+                      composer install --no-interaction --no-progress --prefer-dist
+                  else
+                      echo "composer.json/lock changed → update"
+                      composer update --no-interaction --no-progress --prefer-dist
+                  fi
             -   name: Build site with Cecil
                 uses: Cecilapp/Cecil-Action@v3
                 with:
