@@ -1,10 +1,7 @@
 ---
-title: "Opencode Configuration"
-layout: default
+title: "📚 Opencode Configuration"
 description: "Documentation abour Opencode configuration and how to use it."
 ---
-
-# 📚 Opencode Configuration
 
 The current documentation explains how our Opencode configuration works and how to use it.
 
