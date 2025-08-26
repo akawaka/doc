@@ -1,6 +1,7 @@
 ---
 title: "📚 Opencode Configuration"
 description: "Documentation abour Opencode configuration and how to use it."
+layout: page
 ---
 
 The current documentation explains how our Opencode configuration works and how to use it.
