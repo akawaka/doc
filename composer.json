@@ -16,5 +16,12 @@
       "allow-plugins": {
         "cecil/theme-installer": true
       }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+          "mkdir -p bin",
+          "curl -Lo bin/cecil https://cecil.app/cecil.phar",
+          "chmod +x bin/cecil"
+        ]
     }
 }

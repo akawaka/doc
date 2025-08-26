@@ -1,3 +1,9 @@
 .idea
+.cache
+_site
 pages/*
 !pages/.gitkeep
+bin/
+vendor/
+node_modules/
+themes/*
